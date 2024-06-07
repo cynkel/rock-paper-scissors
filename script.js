@@ -76,9 +76,11 @@ function displayScore() {
     if (computerScore === 5) {
         scoreContainer.textContent = "The computer took over after five battles";
         scoreContainer.appendChild(playAgain);
+        removeButtons();
     }else if (humanScore === 5) {
         scoreContainer.textContent = "You gained freedom after five battles, humanity is free.";
         scoreContainer.appendChild(playAgain);
+        removeButtons();
     }
 }
 
@@ -86,6 +88,19 @@ function play() {
     computerScore = 0;
     humanScore = 0;
     statusContainer.textContent = "NEW ROUND";
+    showButtons();
+}
+
+function removeButtons() {
+    rockButton.remove();
+    paperButton.remove();
+    scissorsButton.remove();
+}
+
+function showButtons() {
+    buttons.appendChild(rockButton);
+    buttons.appendChild(paperButton);
+    buttons.appendChild(scissorsButton);
 }
 
 
